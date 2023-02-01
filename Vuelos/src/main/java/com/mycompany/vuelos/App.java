@@ -20,14 +20,14 @@ public class App {
     private static void verMenu(Vuelo vuelo, Reserva reserva,Pasajero pasajero){
         
        
-        switch (vistaApp.getMenu()) {
+        switch (VistaApp.getMenu()) {
             case "1":mostarVuelos(vuelo.listaVuelos());
             break;
             case "2":reservar(pasajero,vuelo,reserva);
             break;
             case "3":mostarReservas(reserva);
             break;
-            default:vistaApp.setText("Opcion no valida");
+            default:VistaApp.setText("Opcion no valida");
                 break;
         }
     
@@ -45,7 +45,7 @@ public class App {
             datos[3] = arrayListVuelos.get(i).getCiudadDestino();
             datos[4] = arrayListVuelos.get(i).isDisponible() ? "Disponible" : "No disponible";
             
-            vistaApp.setMostrarVuelo(datos);
+            VistaApp.setMostrarVuelo(datos);
             
         }
     }
@@ -73,21 +73,21 @@ public class App {
 
                  }
             
-            vistaApp.setMostrarReserva(datos);
+            VistaApp.setMostrarReserva(datos);
             
         }
     }
     private static void reservar(Pasajero pasajero,Vuelo vuelo,Reserva reserva ) {
        
-        String ciudadOrigen= vistaApp.getEntrada("Ingrese la ciudad de origen");
-        String ciudadDestino= vistaApp.getEntrada("Ingrese la ciudad de destino");
-        String dia= vistaApp.getEntrada("ingrese el dia del vuelo");
-        String mes= vistaApp.getEntrada("Ingrese el mes del vuelo");
-        String año= vistaApp.getEntrada("Ingrese el año del vuelo");
-        String cedula= vistaApp.getEntrada("Ingrese la cedula");
-        String nombre= vistaApp.getEntrada("Ingrese el nombre");
-        String apellido= vistaApp.getEntrada("Ingrese el apellido");
-        String tipo= vistaApp.getEntrada("Ingrese el tipo 1. bebe, 2. Niño 0 3. Adulto");
+        String ciudadOrigen= VistaApp.getEntrada("Ingrese la ciudad de origen");
+        String ciudadDestino= VistaApp.getEntrada("Ingrese la ciudad de destino");
+        String dia= VistaApp.getEntrada("ingrese el dia del vuelo");
+        String mes= VistaApp.getEntrada("Ingrese el mes del vuelo");
+        String año= VistaApp.getEntrada("Ingrese el año del vuelo");
+        String cedula= VistaApp.getEntrada("Ingrese la cedula");
+        String nombre= VistaApp.getEntrada("Ingrese el nombre");
+        String apellido= VistaApp.getEntrada("Ingrese el apellido");
+        String tipo= VistaApp.getEntrada("Ingrese el tipo 1. bebe, 2. Niño 0 3. Adulto");
         
        if (!ciudadOrigen.equals("") && !ciudadDestino.equals("") && !dia.equals("") &&
                !mes.equals("") && !año.equals("") && !cedula.equals("") && 
@@ -96,7 +96,7 @@ public class App {
             
             if (vueloDisponible(fecha,ciudadOrigen,ciudadDestino,vuelo.listaVuelos())) {
                 
-               vistaApp.setText("Vuelo disponible");
+               VistaApp.setText("Vuelo disponible");
                
                vuelo.setNumero(buscarVuelo(fecha,ciudadOrigen,ciudadDestino,vuelo.listaVuelos()));
                vuelo.setFechaVuelo(fecha);
@@ -112,23 +112,23 @@ public class App {
                 while (true) {                    
                     if (pasajeroRegistrado(pasajero)) {
                         
-                        vistaApp.setText("Psajero Encontrado");
+                        VistaApp.setText("Psajero Encontrado");
                         
                         if (hacerReserva(pasajero, vuelo, reserva)) {
                             mostarReservas(reserva);
-                            vistaApp.setText("Reserva realizada con exito");
+                            VistaApp.setText("Reserva realizada con exito");
                             break;
                         }else{
-                            vistaApp.setText("Error al realizar la reserva");
+                            VistaApp.setText("Error al realizar la reserva");
                             break;
                         
                         }
                         
                     }else{
                         if (Registrarpasajero(pasajero)) {
-                            vistaApp.setText("pasajero registrado con exito");
+                            VistaApp.setText("pasajero registrado con exito");
                         }else{
-                            vistaApp.setText("Error al registrar pasajero");
+                            VistaApp.setText("Error al registrar pasajero");
                             break;
                         
                         }
@@ -137,10 +137,10 @@ public class App {
                 }
                
            } else {
-                vistaApp.setText("no hay vuelo disponible para la fecha y localidad suministrada ");
+                VistaApp.setText("no hay vuelo disponible para la fecha y localidad suministrada ");
            }
        }else{
-           vistaApp.setText("No se permiten campos vacios");
+           VistaApp.setText("No se permiten campos vacios");
        
        }
            
