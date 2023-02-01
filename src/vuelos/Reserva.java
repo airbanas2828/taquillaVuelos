@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class Reserva {
     
-    public ArrayList<Vuelo> arrayListVuelos;
-    public ArrayList<Pasajero> arrayListPasajeros;
+    private ArrayList<Vuelo> arrayListVuelos;
+    private ArrayList<Pasajero> arrayListPasajeros;
 
     public Reserva() {
     }
