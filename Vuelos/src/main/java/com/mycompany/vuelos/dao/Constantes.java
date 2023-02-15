@@ -1,5 +1,5 @@
 
-package vuelos.dao;
+package com.mycompany.vuelos.dao;
 
 public class Constantes {
     
