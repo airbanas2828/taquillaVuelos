@@ -10,14 +10,14 @@ public class Conexion {
     
     private Connection connection=null;
     
-    public Connection geConnection(){
+    protected Connection getConexion(){
         
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             connection= DriverManager.getConnection(Constantes.URL+Constantes.DATABASE, Constantes.USER, Constantes.PASSWORD);
-            if (Conexion!=null) {
+            if (connection!=null) {
                 System.out.println("conexion establecida");
             }
         } catch (SQLException e) {
