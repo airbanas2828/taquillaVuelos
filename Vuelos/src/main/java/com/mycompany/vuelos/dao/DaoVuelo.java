@@ -149,13 +149,13 @@ public class DaoVuelo extends Conexion implements IDaoVuelo{
             }
             return false;
             
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println("Error al leer los datos "+e.getMessage());
             return false;
         }finally{
             try {
                 getConexion().close();
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 System.out.println("error al cerrar la conexion"+e);
             }
         }

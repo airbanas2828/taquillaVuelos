@@ -1,10 +1,12 @@
 
 package com.mycompany.vuelos.dao;
 
+import com.mycompany.vuelos.Pasajero;
+
 public interface IDaoPasajero {
     
-    boolean pasajeroRegistrado();
+    boolean pasajeroRegistrado(Pasajero pasajero);
     
-    boolean registrarPasajero();
+    boolean registrarPasajero(Pasajero pasajero);
     
 }
