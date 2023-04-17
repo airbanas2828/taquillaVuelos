@@ -10,7 +10,8 @@ public class App {
 
     public static void main(String[] args) {
 
-   Controlador controladorApp =New Controlador();
+   Controlador controladorApp = New Controlador();
+
         
         }
 }
