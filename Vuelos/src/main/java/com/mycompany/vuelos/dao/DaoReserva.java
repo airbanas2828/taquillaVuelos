@@ -25,7 +25,7 @@ public class DaoReserva extends Conexion implements IDaoReserva{
         
         try {
             PreparedStatement ps = getConexion().prepareStatement(sql);
-            ps.setString(1,reserva.getId);
+            ps.setString(1, reserva.getId);
             ps.setString(3, reserva.getCedula());
             ps.setString(4, reserva.getNumero());
             ps.setBoolean(5, reserva.isDisponible());
@@ -54,7 +54,7 @@ public class DaoReserva extends Conexion implements IDaoReserva{
     
         ArrayList<Reserva> arrayListreReservas=new ArrayList<>();
         
-        String sql="SELECT * FROM"+
+        String sql=" SELECT * FROM "+
                 Constantes.T_RESERVA+
                 " ORDER BY "+Constantes.TR_ID+"DESC";
         
